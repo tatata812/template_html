@@ -1,0 +1,860 @@
+@use "config";
+@use "subpage";
+
+@mixin sp {
+  @media (max-width:(600px)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (max-width:(820px)) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (max-width:(1120px)) {
+    @content;
+  }
+}
+
+
+/* =================================
+header
+ ================================= */
+.header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  transition: transform 0.3s;
+  background-color: #fff;
+  border-bottom: #8a725a 2px solid;
+
+  &.is-hide {
+    transform: translateY(-100%);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1340px;
+    margin: 0 auto;
+    gap: 24px;
+    padding: 16px 12px 12px;
+
+    @include pc {
+      padding: 8px 12px 6px;
+    }
+
+    @include tab {
+      justify-content: space-between;
+      padding: 8px 12px 6px;
+    }
+  }
+
+  &__ttl-wrap {
+    max-width: 200px;
+
+    @include pc {
+      max-width: 140px;
+    }
+  }
+
+  &__menu-wrap {
+    @include pc {
+      display: none;
+    }
+  }
+
+  &__menu-inner {
+    display: flex;
+    gap: 24px;
+
+    @include pc {
+      gap: 12px;
+    }
+  }
+
+  &__menu {
+    font-weight: 700;
+    color: #8a725a;
+
+    &.active {
+      color: #fff;
+      background-color: #8a725a;
+      padding: 1px 8px 0;
+      border-radius: 4px;
+    }
+  }
+
+  &__right-menu-wrap {
+    display: flex;
+    gap: 24px;
+
+    @include pc {
+      display: none;
+    }
+  }
+
+  &__right-menu {
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 0 0 24px;
+    color: #177139;
+    font-weight: bold;
+
+
+
+    &::before {
+      content: url(../img/top/search.svg);
+      position: absolute;
+      top: -1px;
+      left: -26px;
+      transform: scale(0.8);
+    }
+
+    &--account {
+      &::before {
+        content: url(../img/top/account.svg);
+      }
+    }
+
+    &--cart {
+      &::before {
+        content: url(../img/top/cart.svg);
+      }
+    }
+  }
+
+  &__search-wrap {
+    display: flex;
+    position: absolute;
+    border: #177139 1px solid;
+    right: -13px;
+    align-items: center;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    bottom: -52px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      right: 20px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 8px 8px 8px;
+      border-color: transparent transparent #177139 transparent;
+    }
+
+    form {
+      display: flex;
+    }
+
+    input {
+      width: 500px;
+      border: none;
+    }
+
+    button {
+      white-space: nowrap;
+      border: none;
+      background-color: #177139;
+      color: #fff;
+      padding: 0 0 0 2px;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__search-batsu {
+    margin: 0 0 0 12px;
+    font-size: 32px;
+    line-height: 1;
+    padding: 0 0 7px;
+    cursor: pointer;
+  }
+
+  &__account-wrap {
+    position: absolute;
+    border: #177139 1px solid;
+    right: -50px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    width: 125px;
+    bottom: -104px;
+
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 8px 8px 8px;
+      border-color: transparent transparent #177139 transparent;
+    }
+  }
+
+  &__account-item {
+    white-space: nowrap;
+    display: block;
+  }
+
+  &__account-batsu {
+    position: absolute;
+    top: -8px;
+    right: 6px;
+    font-size: 24px;
+  }
+
+  &__btn-wrap {
+    display: none;
+
+    @include pc {
+      display: block;
+      cursor: pointer;
+      z-index: 99;
+      top: 10px;
+      right: 12px;
+      position: absolute;
+      width: 32px;
+    }
+  }
+}
+
+.header-sp {
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translate(100%, 0);
+  z-index: 101;
+  position: fixed;
+  top: -4px;
+  right: 0;
+  padding: 80px 12px 0 40px;
+  background-color: #fff;
+  height: 100vh;
+  width: 80%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+
+  &.active {
+    opacity: 1;
+    transition: all 0.3s;
+    transform: translate(0, 3px);
+    z-index: 100;
+  }
+
+  &__btn-img {
+    width: 32px;
+    display: block;
+    cursor: pointer;
+    z-index: 99;
+    top: 10px;
+    right: 12px;
+    position: absolute;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  &__menu-item {
+    &--margin {
+      margin: 0 0 24px;
+    }
+  }
+
+  &__search-wrap {
+    display: flex;
+    right: -13px;
+    align-items: center;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    justify-content: flex-start;
+    margin: 0 0 40px;
+
+    form {
+      display: flex;
+      gap: 4px;
+      width: 100%;
+    }
+
+    input {
+      width: 85%;
+      border: none;
+      border: #177139 1px solid;
+      padding: 8px;
+      border-radius: 3px;
+
+    }
+
+    button {
+      white-space: nowrap;
+      border: none;
+      background-color: #177139;
+      color: #fff;
+      padding: 0 6px 0 6px;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      border-radius: 3px;
+
+    }
+  }
+}
+
+
+/* =================================
+メインビジュアル
+ ================================= */
+
+.main-visual {
+  background-color: #f2fbf7;
+  position: relative;
+  padding: 0 0 32px;
+  margin: 24px 0;
+
+  @include tab {
+    padding: 0 0 16px;
+    margin: 0 0 24px;
+  }
+
+  &__info-wrap {
+    padding: 0 12px;
+  }
+
+  &__info-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 8px 40px;
+    border-radius: 40px;
+
+    @include tab {
+      border-radius: 8px;
+      padding: 16px;
+
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    @include tab {
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-start;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+
+  }
+
+  // スライダー
+  &__slider-wrap {
+    position: relative;
+    margin: 0 0 60px;
+
+    @include tab{
+      margin: 0 0 30px;
+
+    }
+
+  }
+
+  &__slider {
+
+    .slick-next {
+      right: 0 !important;
+    }
+
+    .slick-prev {
+      left: 0 !important;
+    }
+
+    .slick-next:before {
+      background: url(../img/top/main-visual-arrow_next.png) !important;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+    }
+
+    .slick-prev:before {
+      background: url(../img/top/main-visual-arrow_prev.png) !important;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+    }
+
+    .slick-arrow {
+      z-index: 2 !important;
+      width: 25px !important;
+      height: 100px !important;
+
+      @include sp {
+        width: 25px !important;
+        height: 80px !important;
+      }
+    }
+
+    .slick-arrow:before {
+      content: "" !important;
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute;
+      left: 0;
+      opacity: 1 !important;
+
+      @include pc {
+        bottom: -20px;
+      }
+    }
+
+    .slick-next:before {
+      left: -6px;
+    }
+
+    .slick-prev:before {
+      left: 6px;
+
+    }
+  }
+}
+
+
+/* =================================
+おいしさのひみつ
+ ================================= */
+
+.top-secret {
+  margin: 0 0 24px;
+  position: relative;
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+
+    @include sp {
+      width: 75%;
+      top: 52%;
+
+    }
+  }
+}
+
+
+
+/* =================================
+買い物ガイド
+ ================================= */
+
+.top-guide {
+  background-image: url(../img/top/top-guide-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 40px 12px;
+
+  @include tab {
+    padding: 24px 12px;
+  }
+
+  &__inner {
+    display: flex;
+    gap: 40px;
+    max-width: 880px;
+    margin: 0 auto;
+
+    @include tab {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  &__item {
+
+    @include tab {
+      max-width: 400px;
+    }
+  }
+}
+
+/* =================================
+おすすめ商品
+ ================================= */
+.top-recs {
+  padding: 60px 0;
+
+  @include tab {
+    padding: 40px 0;
+  }
+
+  &__ttl-wrap {
+    padding: 0 12px;
+  }
+
+  &__ttl {
+    border-bottom: #177139 solid 1px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 32px;
+    padding: 0 0 16px 60px;
+    position: relative;
+
+    @include tab {
+      padding: 0 0 8px 32px;
+      margin: 0 auto 40px;
+      font-size: 24px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent transparent transparent #177139;
+      border-width: 31px 0px 0px 15px;
+    }
+  }
+
+  &__btn {
+    text-align: center;
+    margin: 80px 0 0;
+
+    @include tab {
+      margin: 60px 0 0;
+
+    }
+  }
+
+  // slick設定
+  .slick-track {
+    display: flex;
+    gap: 18px;
+
+    @include sp {
+      gap: 8px;
+    }
+  }
+
+  .slick-slide {
+    height: auto !important;
+  }
+
+  .slick-next {
+    right: 0 !important;
+  }
+
+  .slick-prev {
+    left: 0 !important;
+  }
+
+  .slick-next:before {
+    background: url(../img/top/main-visual-arrow_next.png) !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .slick-prev:before {
+    background: url(../img/top/main-visual-arrow_prev.png) !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .slick-arrow {
+    z-index: 2 !important;
+    width: 25px !important;
+    height: 100px !important;
+
+    @include sp {
+      width: 25px !important;
+      height: 80px !important;
+    }
+  }
+
+  .slick-arrow:before {
+    content: "" !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    left: 0;
+    opacity: 1 !important;
+
+    @include pc {
+      bottom: -20px;
+    }
+  }
+
+  .slick-next:before {
+    left: -6px;
+  }
+
+  .slick-prev:before {
+    left: 6px;
+  }
+}
+
+/* =================================
+取り扱い商品
+ ================================= */
+
+.top-handling {
+
+  background-image: url(../img/top/top-handling-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 80px 12px;
+  margin: 0 0 24px;
+
+  @include tab {
+    padding: 40px 12px;
+  }
+
+  &__ttl-wrap {
+    padding: 0 12px;
+  }
+
+  &__ttl {
+    border-bottom: #177139 solid 1px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 32px;
+    padding: 0 0 16px 60px;
+    position: relative;
+
+    @include tab {
+      padding: 0 0 8px 32px;
+      margin: 0 auto 40px;
+      font-size: 24px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent transparent transparent #177139;
+      border-width: 31px 0px 0px 15px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    max-width: 980px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  &__item {
+    width: calc((100% - 48px) / 3);
+    padding: 0 12px;
+    margin: 0 0 40px;
+
+    @include pc {
+      width: calc((100% - 24px) / 2);
+      max-width: 400px;
+    }
+
+    @include tab {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  &__img {
+    width: 180px;
+    margin: 0 auto 24px;
+
+    @include tab {
+      margin: 0 auto 12px;
+      width: 150px;
+
+    }
+  }
+
+  &__item-ttl {
+    border-bottom: #177139 solid 1px;
+    max-width: 800px;
+    margin: 0 auto 24px;
+    font-size: 24px;
+    text-align: center;
+    padding: 0 0 12px;
+    position: relative;
+
+    @include tab {
+      padding: 0 0 8px;
+      margin: 0 auto 12px;
+      font-size: 20px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent transparent #177139 transparent;
+      border-width: 0px 0px 26px 12px;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    margin: 0 0 24px;
+    min-height: 80px;
+
+    @include pc {
+      min-height: auto;
+    }
+
+    @include tab {
+      margin: 0 0 12px;
+    }
+  }
+
+  &__btn {
+    text-align: center;
+  }
+}
+
+
+
+/* =================================
+footer
+ ================================= */
+
+.footer {
+  background-color: #f2f2f2;
+  padding: 40px 0 0;
+  position: relative;
+
+  @include tab {
+    padding: 0;
+  }
+
+  &__top {
+    background-color: #fff;
+    padding: 80px 12px;
+    border-top: #177139 1px solid;
+    border-bottom: #177139 1px solid;
+
+    @include tab {
+      padding: 32px 12px;
+    }
+  }
+
+  &__top-inner {
+    display: flex;
+    justify-content: center;
+
+    @include tab {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+
+  &__top-left {
+    border-right: #b6b6b6 solid 1px;
+    padding: 24px 60px 24px 0;
+
+    @include tab {
+      border-right: none;
+      padding: 0;
+      margin: 0 0 32px;
+    }
+  }
+
+  &__ttl {
+    max-width: 200px;
+    display: block;
+    margin: 0 0 40px;
+  }
+
+  &__tel-text {
+    font-size: 12px;
+
+    &--top {
+      margin: 0 0 0 6px;
+    }
+  }
+
+  &__tel {
+    max-width: 190px;
+    display: block;
+    margin: 2px 0;
+  }
+
+  &__top-right {
+    padding: 0 0 0 60px;
+    display: flex;
+    gap: 40px;
+
+    @include sp {
+      flex-direction: column;
+      gap: 32px;
+      padding: 0;
+      width: 85%;
+    }
+  }
+
+  &__nav-item {
+    display: block;
+    font-size: 13px;
+    margin: 0 0 4px;
+
+    &--margin {
+      margin: 0 0 32px;
+    }
+  }
+
+  &__bottom {
+    font-size: 12px;
+    text-align: center;
+    padding: 12px;
+  }
+
+  &__go-to-btn {
+    width: 60px;
+    position: fixed;
+    bottom: 30px;
+    right: 12px;
+
+    &--osusume {
+      bottom: 100px;
+    }
+  }
+}

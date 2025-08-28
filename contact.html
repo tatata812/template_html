@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="email=no,telephone=no,address=no">
+  <!--!!!!!!!!!!!!!!!!!WPでは不要!!!!!!!!!!!!!!!!!!!!!-->
+  <title>お問い合わせ</title>
+  <meta name="description" content="<?php echo $des; ?>">
+  <!--!!!!!!!!!!!!!!!!!公開時、allに変更する!!!!!!!!!!!!!!!!!!!!!-->
+  <meta name="robots" content="none">
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:description" content="<?php echo $des; ?>">
+  <meta property="og:site_name"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>assets/img/fb.jpg">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta name="twitter:description" content="<?php echo $des; ?>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="assets/css/html5reset-1.6.1.css">
+  <link rel="stylesheet" href="assets/css/style.css?20230220">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body class="wrap">
+  <div class="black-bg"></div>
+
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="header__ttl-wrap header__item"><a href="index.html" class="header__ttl"><img
+            src="assets/img/top/logo.svg" alt="みずほ屋"></a>
+      </h1>
+      <nav class="header__menu-wrap header__item">
+        <div class="header__menu-inner">
+          <a href="" class="header__menu active">取扱商品</a>
+          <a href="" class="header__menu">買い物ガイド</a>
+          <a href="" class="header__menu">よくある質問</a>
+          <a href="" class="header__menu">問い合わせ</a>
+          <a href="" class="header__menu">みずほ屋について</a>
+        </div>
+      </nav>
+      <div class="header__right-menu-wrap">
+        <!-- 検索 -->
+        <div class="header__right-menu"><span class="search-btn-js">検索</span>
+          <div class="header__search-wrap">
+            <form id="form" action="自分のサイトURL" method="get">
+              <input type="text" placeholder="検索ワードを入力">
+              <button type="submit">
+                <div id="s-btn">検索</div>
+              </button>
+            </form>
+            <div class="header__search-batsu">
+              ×
+            </div>
+          </div>
+        </div>
+        <!-- アカウント -->
+        <div class="header__right-menu header__right-menu--account"><span class="account-btn-js">アカウント</span>
+          <div class="header__account-wrap">
+            <div class="header__account-batsu">
+              ×
+            </div>
+            <a href="" class="header__account-item">マイページ</a>
+            <a href="" class="header__account-item">サインイン</a>
+            <a href="" class="header__account-item">新規会員登録</a>
+          </div>
+        </div>
+        <!-- カートボタン -->
+        <a href="" class="header__right-menu header__right-menu--cart">カート</a>
+      </div>
+      <div class="header__btn-wrap header__item open-btn-js" id="js-hamburger-menu">
+        <img src="assets/img/top/hun-btn.png" alt="">
+      </div>
+    </div>
+
+    <div class="header-sp">
+      <div class="header-sp__inner">
+        <div class="header-sp__btn-img">
+          <img src="assets/img/top/hun-btn-batsu.png" alt="閉じる">
+        </div>
+        <div class="header-sp__search-wrap">
+          <form id="form" action="自分のサイトURL" method="get">
+            <input type="text" placeholder="検索ワードを入力">
+            <button type="submit">
+              <div id="s-btn">検索</div>
+            </button>
+          </form>
+        </div>
+        <div class="header-sp__menu">
+          <a href="" class="header-sp__menu-item">カート</a>
+          <a href="" class="header-sp__menu-item">マイページ</a>
+          <a href="" class="header-sp__menu-item">サインイン</a>
+          <a href="" class="header-sp__menu-item header-sp__menu-item--margin">新規会員登録</a>
+          <a href="" class="header-sp__menu-item">取扱商品</a>
+          <a href="" class="header-sp__menu-item">- お米</a>
+          <a href="" class="header-sp__menu-item">- 厳選の食材や調味料</a>
+          <a href="" class="header-sp__menu-item">- オリジナルセット</a>
+          <a href="" class="header-sp__menu-item">- ギフト</a>
+          <a href="" class="header-sp__menu-item">- 季節商品</a>
+          <a href="" class="header-sp__menu-item header-sp__menu-item--margin">- 関連商品</a>
+          <a href="" class="header-sp__menu-ite">買い物ガイド</a>
+          <a href="" class="header-sp__menu-item">よくある質問</a>
+          <a href="" class="header-sp__menu-item">問い合わせ</a>
+          <a href="" class="header-sp__menu-item header-sp__menu-item--margin">みずほ屋について</a>
+          <a href="" class="header-sp__menu-item">プライバシーポリシー</a>
+          <a href="" class="header-sp__menu-item">特定商取引法に基づく表記</a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="main page-contact subpage">
+    <div class="breadcrumbs-wrap">
+      <div class="breadcrumbs-wrap__content">HOME ／ ○○○○ ／ ○○○○</div>
+    </div>
+
+    <h1 class="subpage__ttl subpage__ttl--wrap">お問い合わせ</h1>
+
+
+    <section class="page-contact__section">
+      <p class="page-contact__text">内容によっては回答をさしあげるのにお時間をいただくこともございます。<br>
+        また、休業日は翌営業日以降の対応となりますのでご了承ください。</p>
+      <p class="page-contact__text"><span style="font-weight: bold;">法人様・資料請求</span><br>
+        業販やその他法人名義でのお問い合わせ・資料請求は、<br>
+        【お問い合わせ項目】をお選び下さい。
+      </p>
+
+      <div class=" page-contact__content">
+        <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+        <form class="h-adr">
+          <table class=" page-contact__table">
+            <span class="p-country-name" style="display:none;">Japan</span>
+            <tr>
+              <th>お問い合わせ項目 <span class="page-contact__table-span">必須</span></th>
+              <td>
+                <label><input type="radio" name="example" value="お問い合わせ">お問い合わせ</label>
+                <label><input type="radio" name="example" value="お問い合わせ(法人様)">お問い合わせ(法人様)</label>
+                <label><input type="radio" name="example" value="資料請求">資料請求</label>
+              </td>
+            </tr>
+            <tr>
+              <th>お名前 <span class=" page-contact__table-span">必須</span></th>
+              <td><input type="text"></td>
+            </tr>
+            <tr>
+              <th>ふりがな<span class=" page-contact__table-span">必須</span></th>
+              <td><input type="text"></td>
+            </tr>
+            <tr>
+              <th>法人名</th>
+              <td><input type="text"></td>
+            </tr>
+            <tr>
+              <th>郵便番号</th>
+              <td class="page-contact__input-s"><input type="text" class="p-postal-code"></td>
+            </tr>
+            <tr>
+              <th>住所</th>
+              <td><input type="text" class="p-region p-locality p-street-address p-extended-address"></td>
+            </tr>
+            <tr>
+              <th>電話番号<span class=" page-contact__table-span">必須</span></th>
+              <td class="page-contact__input-s"><input type="text" name="NAME"></td>
+            </tr>
+            <tr>
+              <th>メールアドレス<span class=" page-contact__table-span">必須</span></th>
+              <td><input type="text" name="NAME"></td>
+            </tr>
+            <tr>
+              <th>お問合せ内容<span class=" page-contact__table-span">必須</span></th>
+              <td><textarea id="story" name="story" rows="10"></textarea>
+                ※ご注文に関するお問い合わせには、必ず「ご注文番号」をご記入ください</td>
+            </tr>
+          </table>
+        </form>
+
+        <button type="button">送信</button>
+      </div>
+    </section>
+
+
+
+
+  </div>
+  <!--main end-->
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__top-inner">
+        <div class="footer__top-left">
+          <a href="" class="footer__ttl"><img src="assets/img/top/logo.svg" alt="みずほ屋"></a>
+          <div class="footer__tel-wrap">
+            <p class="footer__tel-text footer__tel-text--top">電話でのご注文は</p>
+            <a href="tel:083-922-1550" class="footer__tel"><img src="assets/img/top/footer-tel.png" alt=""></a>
+            <p class="footer__tel-text">（9:00-17:00 土・日・祝日を除く）</p>
+          </div>
+        </div>
+        <div class="footer__top-right">
+          <div class="footer__nav-left">
+            <a href="" class="footer__nav-item">取扱商品</a>
+            <a href="" class="footer__nav-item">- お米</a>
+            <a href="" class="footer__nav-item">- 厳選の食材や調味料</a>
+            <a href="" class="footer__nav-item">- オリジナルセット</a>
+            <a href="" class="footer__nav-item">- ギフト</a>
+            <a href="" class="footer__nav-item">- 季節商品</a>
+            <a href="" class="footer__nav-item">- 関連商品</a>
+          </div>
+          <div class="footer__nav-right">
+            <a href="guide.html" class="footer__nav-item">買い物ガイド</a>
+            <a href="voice.html" class="footer__nav-item">よくある質問</a>
+            <a href="contact.html" class="footer__nav-item">問い合わせ</a>
+            <a href="mizuhomai.html" class="footer__nav-item footer__nav-item--margin">みずほ屋について</a>
+            <a href="privacy.html" class="footer__nav-item">プライバシーポリシー</a>
+            <a href="order.html" class="footer__nav-item">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="footer__bottom">
+      &copy;みずほ屋
+    </div>
+
+
+    <a href="#" class="footer__go-to-btn top-to-js"><img src="assets/img/top/go-top-btn.png" alt=""></a>
+  </footer>
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="assets/js/main.js">
+  </script>
+</body>
+
+</html>
