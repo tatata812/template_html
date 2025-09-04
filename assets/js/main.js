@@ -1,6 +1,6 @@
 $(function () {
 
-// SPメニュー
+  // SPメニュー
   $("#js-hamburger-menu, .navigation__link").click(function () {
     $(".header-sp,.black-bg,.header").toggleClass("active"); //ボタン自身に activeクラスを付与し
   });
@@ -45,110 +45,27 @@ $(function () {
   });
 
 
-  // おすすめボタン spでは表示・クリックで切り替え
-  $(function () {
-    var $topButton = $(".top-btn");
-    var $osusumeButton = $(".osusume-js");
-    var $footer = $("footer");
 
-    $topButton.hide();
-    $osusumeButton.click(function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      $topButton.css("display", "block");
-    });
-
-    $(document).on("click", ".top-btn__batsu", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      if ($(window).width() < 820) {
-        $topButton.css("display", "none");
-      }
-    });
-
-    $(window).scroll(function () {
-      var scrollTop = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      var footerTop = $footer.offset().top;
-
-      if (scrollTop + windowHeight >= footerTop) {
-        $osusumeButton.fadeOut();
-      } else {
-        if ($(window).width() < 820) {
-          $osusumeButton.fadeIn();
-        }
-      }
-    });
-
-    function checkWindowSize() {
-      if ($(window).width() >= 820) {
-        // 820px 以上なら
-        $osusumeButton.hide();
-        $topButton.show(); // 常に表示
-      } else {
-        // 820px 未満なら
-        $topButton.hide(); // 初期は非表示（クリックで表示）
-        $osusumeButton.show();
-      }
-    }
-    checkWindowSize();
-
-    $(window).resize(function () {
-      checkWindowSize();
-    });
-  });
-
-
-  // サーチボタン・アカウントボタン
-  $(document).ready(function () {
-    // 初期状態で非表示にする
-    $('.header__search-wrap, .header__account-wrap').hide();
-
-    // 検索ボタンクリック時
-    $('.search-btn-js').on('click', function () {
-      $('.header__account-wrap').fadeOut(); // アカウントを閉じる
-      $('.header__search-wrap').fadeIn(); // 検索を開く
-    });
-
-    // 検索閉じるボタンクリック時
-    $('.header__search-batsu').on('click', function () {
-      $('.header__search-wrap').fadeOut();
-    });
-
-    // アカウントボタンクリック時
-    $('.account-btn-js').on('click', function () {
-      $('.header__search-wrap').fadeOut(); // 検索を閉じる
-      $('.header__account-wrap').fadeIn(); // アカウントを開く
-    });
-
-    // アカウント閉じるボタンクリック時
-    $('.header__account-batsu').on('click', function () {
-      $('.header__account-wrap').fadeOut();
-    });
-  });
 
 
   // メインビジュアル　スライダー
-  $(".main-visual-js").slick({
-    autoplay: true,
-    autoplaySpeed: 5000,
-    fade: false, // スライドをフェードイン・フェードアウト
-    cssEase: 'linear', // アニメーション
-    speed: 1000, // フェードアニメーションの速度設定
-    dots: true,
-    arrows: true,
-    centerMode: true,
-    centerPadding: "25%",
-    dotsClass: 'dots-wrap',
+  $(document).ready(function () {
+    const $slides = $('.main-visual-js img');
+    let current = 0;
+    const slideCount = $slides.length;
+    const intervalTime = 5000; // 3秒ごとに切り替え
 
-    responsive: [{
-      breakpoint: 750,
-      settings: {
-        centerMode: false,
-        arrows: false, // 矢印非表示
-      }
-    }]
-  })
+    // 初期設定：最初の画像以外を非表示
+    $slides.hide().eq(current).show();
+
+    // スライド切り替え
+    setInterval(function () {
+      const next = (current + 1) % slideCount;
+      $slides.eq(current).fadeOut(1000);
+      $slides.eq(next).fadeIn(1000);
+      current = next;
+    }, intervalTime);
+  });
 
 
   // おいしさのひみつ
@@ -281,4 +198,3 @@ $(function () {
   });
 
 })
-

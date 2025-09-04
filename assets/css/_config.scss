@@ -1,3 +1,6 @@
+$main: #f03928;
+$sub: #06cda2;
+
 @mixin sp {
   @media (max-width:(600px)) {
     @content;
@@ -91,6 +94,66 @@ textarea {
   }
 }
 
+.fa-phone {
+  color: $main;
+  margin: 0 8px 0 0;
+}
+
+// トップページタイトル
+.top-ttl-style {
+  color: $main;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.4;
+
+  @include sp{
+  font-size: 26px;
+  text-align: center;
+  }
+
+  span {
+    display: block;
+    color: #141414;
+    font-size: 17px;
+
+    @include sp{
+    font-size: 14px;
+    }
+  }
+}
+
+.section-bg {
+  background-color: #f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .black-bg {
   visibility: hidden;
   position: fixed;
@@ -111,12 +174,13 @@ textarea {
 }
 
 .main {
-  margin: 80px 0 0;
+  margin: 76px 0 0;
 
   @include pc {
-    margin: 53px 0 0 0;
+    margin: 50px 0 0 0;
   }
 }
+
 // 下層ページスタイル
 
 .subpage {
@@ -141,8 +205,8 @@ textarea {
     &--center {
       text-align: center;
 
-      @include tab{
-      text-align: left;
+      @include tab {
+        text-align: left;
       }
     }
   }
@@ -154,7 +218,7 @@ textarea {
     max-width: 880px;
     margin: 0 auto;
 
-    @include tab{
+    @include tab {
       padding: 24px 12px;
     }
   }
@@ -165,9 +229,9 @@ textarea {
     border-bottom: 2px solid #177139;
     padding: 0 0 0 12px;
 
-    @include tab{
-    font-size: 18px;    
-    padding: 0 0 0 0px;
+    @include tab {
+      font-size: 18px;
+      padding: 0 0 0 0px;
     }
   }
 
@@ -191,19 +255,23 @@ textarea {
       width: 100%;
     }
 
-    table , td, th {
+    table,
+    td,
+    th {
       border: 1px solid #177139;
       border-collapse: collapse;
       text-align: left;
     }
 
-    td, th {
+    td,
+    th {
       padding: 4px 10px;
 
-      @include sp{
-      padding: 4px 6px;
+      @include sp {
+        padding: 4px 6px;
       }
     }
+
     th {
       background-color: #f2fbf7;
     }
@@ -214,8 +282,8 @@ textarea {
       th {
         width: 160px;
 
-        @include tab{
-        width: 110px;
+        @include tab {
+          width: 110px;
         }
       }
     }
@@ -658,7 +726,7 @@ textarea {
     position: relative;
     padding-top: 60.25%;
     overflow: hidden;
-    
+
     iframe {
       position: absolute;
       top: 0;
@@ -680,11 +748,11 @@ textarea {
     display: block;
     margin: 0 auto;
   }
-  
+
   .alignright {
     float: right;
   }
-  
+
   .alignleft {
     float: left;
   }
@@ -765,4 +833,3 @@ textarea {
 
 
 }
-
