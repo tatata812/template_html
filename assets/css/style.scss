@@ -1,8 +1,8 @@
 @use "config";
 @use "subpage";
 
-$main: #f03928;
-$sub: #06cda2;
+$main: #e52213;
+$sub: #2ba99d;
 
 @mixin sp {
   @media (max-width:(600px)) {
