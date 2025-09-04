@@ -53,7 +53,7 @@ $(function () {
     const $slides = $('.main-visual-js img');
     let current = 0;
     const slideCount = $slides.length;
-    const intervalTime = 5000; // 3秒ごとに切り替え
+    const intervalTime = 4000; // 3秒ごとに切り替え
 
     // 初期設定：最初の画像以外を非表示
     $slides.hide().eq(current).show();
