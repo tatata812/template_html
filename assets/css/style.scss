@@ -383,6 +383,7 @@ header
 
 .top-menu {
   padding: 80px 12px;
+
   @include tab {
     padding: 40px 12px;
   }
@@ -395,9 +396,9 @@ header
     display: flex;
     gap: 40px;
 
-    @include tab{
-    flex-direction: column;
-    align-items: center;
+    @include tab {
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -415,9 +416,9 @@ header
       transform: scale(0.4);
     }
 
-    @include tab{
-    width: 100%;
-    max-width: 300px;
+    @include tab {
+      width: 100%;
+      max-width: 300px;
     }
   }
 
@@ -433,11 +434,11 @@ header
     display: inline-block;
     margin: 12px 0 0 40px;
 
-    @include pc{
-        width: 160px;
-    /* 丸の直径 */
-    height: 160px;
-    /* 丸の直径 */
+    @include pc {
+      width: 160px;
+      /* 丸の直径 */
+      height: 160px;
+      /* 丸の直径 */
     }
 
     img {
@@ -484,20 +485,73 @@ header
 }
 
 /* =================================
-
+お問い合わせ
  ================================= */
 
-.aaa {
+.top-contact {
+  padding: 80px 12px;
 
-  &__ {}
+  @include tab {
+    padding: 40px 12px;
+  }
 
-  &__ {}
 
-  &__ {}
+  &__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 12px;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
 
-  &__ {}
+    @include tab {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;    
+      gap: 24px;
 
-  &__ {}
+    }
+  }
+
+  &__ttl {
+    margin-right: auto;
+
+    @include tab{
+    margin: 0 auto;
+    }
+  }
+
+  &__item {
+    width: 360px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+
+    @include tab{
+    width: 100%;
+    max-width: 360px;
+    }
+  }
+
+  &__icon {
+    width: 34px;
+    margin: 0 0 16px;
+
+    &--tel {
+    width: 28px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 24px;
+  }
+
+  &__tel {
+    text-align: center;
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+  }
 
   &__ {}
 
@@ -585,9 +639,8 @@ footer
 
   &__top {
     background-color: #fff;
-    padding: 80px 12px;
-    border-top: #177139 1px solid;
-    border-bottom: #177139 1px solid;
+    padding: 60px 12px;
+
 
     @include tab {
       padding: 32px 12px;
@@ -597,6 +650,7 @@ footer
   &__top-inner {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     @include tab {
       flex-direction: column;
@@ -606,11 +660,14 @@ footer
 
 
   &__top-left {
-    border-right: #b6b6b6 solid 1px;
-    padding: 24px 60px 24px 0;
+    border-right: $main solid 1px;
+    border-left: $main solid 1px;
+    padding: 0 60px;
 
     @include tab {
       border-right: none;
+      border-left: none;
+      width: 280px;
       padding: 0;
       margin: 0 0 32px;
     }
@@ -619,43 +676,67 @@ footer
   &__ttl {
     max-width: 200px;
     display: block;
-    margin: 0 0 40px;
+    margin: 0 0 24px;
   }
 
-  &__tel-text {
-    font-size: 12px;
-
-    &--top {
-      margin: 0 0 0 6px;
-    }
+  &__text {
+    margin: 0 0 12px;
   }
 
   &__tel {
-    max-width: 190px;
-    display: block;
-    margin: 2px 0;
+    font-weight: bold;
   }
+
+
 
   &__top-right {
-    padding: 0 0 0 60px;
-    display: flex;
-    gap: 40px;
+    padding: 0 60px;
+    border-right: $main solid 1px;
 
-    @include sp {
-      flex-direction: column;
-      gap: 32px;
+    @include tab {
+      border-right: none;
       padding: 0;
-      width: 85%;
+      width: 280px;
     }
+
+
   }
 
-  &__nav-item {
-    display: block;
+  &__nav-wrap {
+    display: flex;
     font-size: 13px;
-    margin: 0 0 4px;
+    gap: 40px;
+    margin: 0 0 24px;
 
-    &--margin {
-      margin: 0 0 32px;
+  }
+
+  &__nav {
+    display: block;
+  }
+
+  &__contact {
+    background-color: $main;
+    color: #fff;
+    padding: 8px;
+    border-radius: 24px;
+    width: 160px;
+    text-align: center;
+    display: block;
+    margin: 0 auto 24px;
+  }
+
+  &__sns-wrap {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__sns {
+    width: 26px;
+
+    img {
+      vertical-align: middle;
     }
   }
 
@@ -663,13 +744,15 @@ footer
     font-size: 12px;
     text-align: center;
     padding: 12px;
+    background-color: $main;
+    color: #fff;
   }
 
   &__go-to-btn {
-    width: 60px;
+    width: 40px;
     position: fixed;
-    bottom: 30px;
-    right: 12px;
+    bottom: 0px;
+    right: 0px;
 
     &--osusume {
       bottom: 100px;
