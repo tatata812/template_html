@@ -22,12 +22,15 @@ $sub: #2ba99d;
 * {
   word-break: break-word;
   box-sizing: border-box;
-}f
+}
 
-body {
+ body {
   line-height: 1.8;
   color: #141414;
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    "Meiryo", "Yu Gothic", "YuGothic",
+    sans-serif;
 }
 
 p {
@@ -114,9 +117,9 @@ dt {
   font-weight: bold;
   line-height: 1.4;
 
-  @include sp{
-  font-size: 26px;
-  text-align: center;
+  @include sp {
+    font-size: 26px;
+    text-align: center;
   }
 
   span {
@@ -124,8 +127,8 @@ dt {
     color: #141414;
     font-size: 17px;
 
-    @include sp{
-    font-size: 14px;
+    @include sp {
+      font-size: 14px;
     }
   }
 }
