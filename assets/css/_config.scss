@@ -22,7 +22,7 @@ $sub: #2ba99d;
 * {
   word-break: break-word;
   box-sizing: border-box;
-}
+}f
 
 body {
   line-height: 1.8;
@@ -73,10 +73,7 @@ dt {
   font-size: clamp(0.813rem, 0.79rem + 0.11vw, 0.875rem);
 }
 
-input,
-textarea {
-  -webkit-appearance: none;
-}
+
 
 .pc-block {
   display: block;
@@ -97,6 +94,17 @@ textarea {
 .fa-phone {
   color: $main;
   margin: 0 8px 0 0;
+}
+
+// パンくずリスト
+.breadcrumbs-wrap {
+
+  &__content {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 12px 0;
+    font-size: 11px;
+  }
 }
 
 // トップページタイトル
@@ -580,23 +588,7 @@ textarea {
   }
 }
 
-// パンくずリスト
-.breadcrumbs-wrap {
-  &__content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 6px 12px 0;
-    font-size: 12px;
-  }
 
-  &.guide {
-    padding: 160px 12px 0;
-
-    @include tab {
-      padding: 114px 12px 0;
-    }
-  }
-}
 
 
 // ボタン
@@ -770,7 +762,7 @@ textarea {
     position: relative;
     font-size: 28px;
     font-weight: bold;
-    margin: 0 0 24px;
+    margin: 0 0 36px;
 
 
     @include tab {
@@ -782,7 +774,7 @@ textarea {
       width: 110px;
       height: 3px;
       display: inline-block;
-      background-color: #177139;
+      background-color: $sub;
       position: absolute;
       bottom: -10px;
       left: 0;
@@ -792,7 +784,7 @@ textarea {
   h2 {
     font-size: 22px;
     margin: 24px 0 12px;
-    color: #177139;
+    color: $sub;
     font-weight: bold;
 
     @include sp {

@@ -1,3 +1,6 @@
+$main: #e52213;
+$sub: #2ba99d;
+
 @mixin sp {
   @media (max-width:(600px)) {
     @content;
@@ -16,1185 +19,136 @@
   }
 }
 
-/* =================================
-一覧ページ
- ================================= */
 
-.archive {
-  padding: 0 0 80px;
+// 下層共通
 
-  @include tab {
-    padding: 0 0 40px;
-
-  }
-
-  &__section {
-    max-width: 1160px;
-    margin: 0 auto;
-  }
+.subpage {
 
   &__ttl-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 12px;
-    margin: 40px 0 24px;
-
-    @include sp {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 8px;
-      margin: 24px 0 12px;
-
-    }
+    border-bottom: 1px solid #eee;
   }
 
-  &__select {
-    padding: 4px 8px;
-
-    @include sp {
-      margin: 0 0 0 auto;
-    }
-  }
-
-  &__card-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-    margin: 0 0 40px;
-
-    @include pc {
-      gap: 16px;
-    }
+  &__ttl-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 60px 12px;
 
     @include tab {
-      margin: 0 0 24px;
+      padding: 24px 12px;
     }
+  }
+
+  &__ttl {
+    color: $main;
+    font-size: 46px;
+    font-weight: bold;
+    line-height: 1.4;
+
+    @include sp {
+      font-size: 26px;
+      text-align: center;
+    }
+
+    span {
+      display: block;
+      color: #141414;
+      font-size: 24px;
+
+      @include sp {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__main {
+    padding: 40px 12px 80px;
+
+    @include tab {
+      padding: 24px 12px 40px;
+    }
+  }
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+}
+
+/* =================================
+ニュース
+ ================================= */
+
+.page-news {
+
+  &__article-wrap {
+    max-width: 880px;
+    margin: 0 auto 60px;
   }
 
   &__pager {
     text-align: center;
   }
+
+  &__ {}
+
+  &__ {}
+
+
 }
 
 /* =================================
-商品詳細
+記事詳細
  ================================= */
 
 .single {
-  padding: 0 12px 80px;
 
-  @include tab {
-    padding: 0 12px 40px;
-  }
-
-  &__ttl-wrap {
-    max-width: 1160px;
-    margin: 24px auto -12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  &__ttl-img {
-    width: 90px;
-
-    @include sp {
-      width: 60px;
-    }
-  }
-
-  &__section {}
-
-  &__section-inner {
-    max-width: 1080px;
+  &__content-wrap {
+    max-width: 880px;
     margin: 0 auto;
   }
 
-
-  &__section-ttl {
-    position: relative;
-    font-size: 28px;
-    font-weight: bold;
-
-    @include tab {
-      font-size: 20px;
-    }
-
-    &:after {
-      content: '';
-      width: 110px;
-      height: 3px;
-      display: inline-block;
-      background-color: #177139;
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-    }
-  }
-
-  &__section-ttl-wrap {
-    max-width: 800px;
-    margin: 0 auto 60px;
-
-    @include tab {
-      margin: 0 auto 40px;
-    }
-  }
-
-  &__section-img {
-    margin: 0 0 40px;
-
-    @include tab {
-      margin: 0 0 24px;
-    }
-  }
-
-  &__section-flex {
-    display: flex;
+  &__ content {
     margin: 0 0 80px;
-
-    @include pc {
-      gap: 24px;
-    }
-
-    @include tab {
-      flex-direction: column;
-      margin: 0 0 40px;
-
-    }
-  }
-
-  &__section-left {
-    flex: 1;
-  }
-
-  &__section-right {
-    width: 45%;
-
-    @include tab {
-      width: 100%;
-      max-width: 500px;
-    }
-  }
-
-  &__section-right-ttl {
-    color: #177139;
-    font-size: 22px;
-    font-weight: bold;
-    margin: 0 0 32px;
-
-    @include tab {
-      text-align: center;
-      font-size: 20px;
-      margin: 0 0 16px;
-
-    }
-  }
-
-  &__section-right-text {}
-
-  &__section-text {
-    max-width: 800px;
-    margin: 0 auto 24px;
-  }
-}
-
-
-.single-item {
-  background-color: #f2fbf7;
-  padding: 60px 160px;
-  max-width: 1240px;
-  margin: 0 auto 120px;
-  border-radius: 24px;
-
-  @include pc {
-    padding: 60px 24px;
-  }
-
-  @include sp {
-    padding: 40px 12px;
-    border-radius: 8px;
-    margin: 0 auto 60px;
-  }
-
-  &__inner {
-    display: flex;
-    gap: 40px;
-
-    @include tab {
-      flex-direction: column;
-    }
-  }
-
-  &__left {
-    flex: 1;
-  }
-
-  &__right {
-    width: 400px;
-
-    @include tab {
-      width: 100%;
-    }
-  }
-
-  &__img-wrap {
-    position: relative;
-    z-index: 0;
-    margin: 0 0 12px;
-
-    @include sp {
-      margin: 0;
-
-    }
-
-    &:before {
-      position: absolute;
-      top: -40px;
-      left: -30px;
-      transform: scale(0.6);
-      z-index: 10;
-    }
-
-    &.tokubetsu {
-      &::before {
-        content: url(../img/top/sticker-tokubetsu.png);
-      }
-    }
-
-    &.gentei {
-      &::before {
-        content: url(../img/top/sticker-gentei.png);
-      }
-    }
-
-    &.gensen {
-      &::before {
-        content: url(../img/top/sticker-gensen.png);
-      }
-    }
-
-    &.kikan {
-      &::before {
-        content: url(../img/top/sticker-kikan.png);
-      }
-    }
-  }
-
-  &__img {
-    border: #fff 12px solid;
-    border-radius: 20px;
-    width: 100%;
-    overflow: hidden;
-    display: block;
-
-    @include sp {
-      border-radius: 8px;
-      border: #fff 8px solid;
-    }
-
-    img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-
-      &:before {
-        content: "";
-        padding-top: 100%;
-        display: block;
-      }
-
-      &.current {
-        border: #848484 1px solid;
-
-        img {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  &__sub-img-wrap {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-
-    @include sp {
-      gap: 8px;
-    }
-  }
-
-  &__sub-img {
-    width: calc((100% - 24px) / 3);
-    position: relative;
-    overflow: hidden;
-    border: #fff 8px solid;
-    border-radius: 4px;
-
-    @include sp {
-      border-radius: 4px;
-      border: #fff 4px solid;
-    }
-
-    &:before {
-      content: "";
-      padding-top: 100%;
-      display: block;
-    }
-
-    &.current {
-      border: #848484 1px solid;
-
-      img {
-        opacity: 1;
-      }
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      object-fit: cover;
-      opacity: 0.5;
-      cursor: pointer;
-    }
-  }
-
-
-  &__cat-wrap {
-    display: flex;
-    gap: 8px;
-    margin: 0 0 40px;
-
-    @include sp {
-      margin: 0 0 12px;
-    }
-  }
-
-  &__cat {
-    width: 80px;
-    text-align: center;
-    color: #fff;
-    font-size: 13px;
-    padding: 2px 0 0 0;
-
-    &.cat01 {
-      background-color: #ff9933;
-    }
-
-    &.cat02 {
-      background-color: #96ca49;
-    }
-  }
-
-  &__ttl {
-    font-size: 32px;
-    margin: 0 0 20px;
-    line-height: 1.4;
-
-    @include sp {
-      font-size: 20px;
-    }
-  }
-
-  &__ttl-span {
-    display: block;
-  }
-
-  &__lead {
-    padding: 0 4px;
-    margin: 0 0 16px;
-    font-size: 14px;
-  }
-
-  &__price-wrap {
-    border-top: 1px solid #bbbbbb;
-    border-bottom: 1px solid #bbbbbb;
-    padding: 10px 4px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin: 0 0 12px;
-    justify-content: space-between;
-  }
-
-  &__price {
-    font-size: 26px;
-    font-weight: bold;
-    white-space: nowrap;
-
-    @include sp {
-      font-size: 20px;
-    }
-  }
-
-  &__price-tax {
-    font-size: 14px;
-    font-weight: normal;
-    display: block;
-  }
-
-  &__price-span {
-    font-size: 12px;
-    font-weight: normal;
-  }
-
-  &__price-right {
-    display: flex;
-    align-items: end;
-    gap: 8px;
-  }
-
-  &__select-wrap {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__select-span {
-    font-size: 12px;
-  }
-
-  &__select {
-    padding: 8px;
-    border: #ff9933 solid 1px;
-    width: 60px;
-    border-radius: 3px;
-  }
-
-  &__souryou-text {
-    text-align: right;
-    margin: 0 0 19px;
-  }
-
-  &__souryou-link {
-    color: #ff3333;
-    text-decoration: underline;
-  }
-
-  &__input {
-    border: none;
-    background-color: #ff9933;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #ffddbc;
-    }
-  }
-
-  &__bottom-text {
-    font-size: 14px;
-    white-space: nowrap;
-    padding: 0 4px;
-    margin: 0 0 8px;
-  }
-
-  &__size-wrap {
-    display: flex;
-    gap: 8px;
-    padding: 0 4px;
-    flex-wrap: wrap;
-    margin: 0 0 66px;
-
-    @include sp {
-      margin: 0 0 32px;
-    }
-  }
-
-  &__size-item {
-    border: #177139 2px solid;
-    border-radius: 20px;
-    width: 80px;
-    padding: 0 8px;
-    position: relative;
-
-    &.active {
-      background-color: #177139;
-      color: #fff;
-    }
-
-    &:after {
-      content: '';
-      border: 0;
-      border-top: solid 2px #177139;
-      border-right: solid 2px #177139;
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      /* 矢印アイコンの位置を設定 */
-      position: absolute;
-      top: 50%;
-      right: 8px;
-      transform: translateY(-50%) rotate(45deg);
-      /* rotate(45deg)で矢印を回転（向きを変更）させる */
-      transition: all 0.5s;
-    }
-
-    &:hover {
-      &:after {
-        right: 3px;
-      }
-    }
-  }
-
-  &__description-wrap {
-    background-color: #fff;
-    padding: 16px;
-    border-radius: 4px;
-    margin: 0 0 32px;
-  }
-
-  &__description-ttl {
-    font-size: 24px;
-    margin: 0 0 16px;
-
-    font-size: 20px;
-  }
-
-  &__description-lead {
-    border-bottom: #bbbbbb 1px solid;
-    display: inline-block;
-    padding: 0 0 8px;
-    margin: 0 0 8px;
-  }
-
-  &__detail-wrap {
-
-    border-left: #bbbbbb 1px solid;
-    padding: 0 0 0 18px;
-
-    th {
-      width: 80px;
-      text-align: left;
-      font-weight: normal;
-    }
-  }
-
-}
-
-/* =================================
-よくあるご質問
- ================================= */
-
-.page-voice {
-
-  &__section {
-    padding: 80px 12px;
-    max-width: 880px;
-    margin: 0 auto;
-  }
-
-  &__item {
-    border: #ededed 1px solid;
-    padding: 16px;
-    margin: 0 0 40px;
-  }
-
-  &__question {
-    border-bottom: #ededed 1px solid;
-    padding: 0 4px 12px;
-    position: relative;
-    margin: 0 0 0 24px;
-
-    &::before {
-      content: "Q.";
-      position: absolute;
-      left: -18px;
-    }
-  }
-
-  &__item-bottom {}
-
-  &__answer {
-    padding: 12px 4px 0;
-    position: relative;
-    margin: 0 0 0 24px;
-
-    &::before {
-      content: "A.";
-      position: absolute;
-      left: -18px;
-      font-weight: bold;
-
-    }
-
-    &::first-line {
-      font-weight: bold;
-    }
-
-    a {
-      text-decoration: underline;
-    }
-  }
-}
-
-
-/* =================================
-ご利用案内
- ================================= */
-
-.page-guide {
-  margin: 80px 0 24px;
-
-  @include tab {
-    margin: 0;
-    margin: 53px 0 24px;
-  }
-
-  &__section {
-
-    &--bg {
-      background-color: #f2fbf7;
-    }
-  }
-
-  &__section-inner {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 80px 0;
-
-    @include tab {
-      padding: 40px 0;
-    }
-  }
-
-  &__section-ttl-wrap {
-    display: flex;
-    max-width: 920px;
-    margin: 0 auto 40px;
-    align-items: center;
-    gap: 18px;
-    padding: 0 12px;
-
-    @include tab {
-      gap: 8px;
-    }
-
-
-    &--section05 {
-      align-items: flex-start;
-    }
-
-
-  }
-
-  &__section-ttl-img {
-    width: 100px;
-
-    @include tab {
-      width: 50px;
-    }
-  }
-
-  &__section-ttl {
-    font-size: 30px;
-    border-bottom: #177139 1px solid;
-    flex: 1;
-    padding: 0 0 12px;
-
-    @include tab {
-      font-size: 22px;
-      padding: 0 0 3px;
-    }
-
-    &--orange {
-      border-bottom: #fab153 1px solid;
-    }
-  }
-
-  &__section-ttl-bottom {
-    color: #fab153;
-    font-size: 24px;
-    padding: 12px 0;
-    border-bottom: #fab153 1px solid;
-    font-weight: bold;
-
-    @include sp {
-      font-size: 16px;
-      padding: 12px 0 0;
-      border-bottom: none;
-
-    }
-
-  }
-
-  &__section-ttl-text-wrap {
-    flex: 1;
-
-  }
-
-  &__inner {
-    margin: 0 0 0 117px;
-    padding: 0 12px 0 0;
-
-    @include tab {
-      margin: 0;
-      padding: 0 12px;
-    }
-  }
-
-  &__section-sub-ttl {
-    color: #177139;
-    border: #177139 1px solid;
-    padding: 0 12px;
-    display: inline-block;
-    font-size: 18px;
-    margin: 0 0 16px;
-
-    @include sp {
-      font-size: 16px;
-    }
-  }
-
-  &__section-text-wrap {
-    margin: 0 0 40px;
-  }
-
-  &__section-text {
-    margin: 0 0 16px;
-
-    &:last-of-type {
-      margin: 0;
-    }
-
-    a {
-      color: #2cb573;
-      border-bottom: #848484 1px solid;
-    }
-
-    span {
-      color: #f15a24;
-    }
-  }
-
-  &__tel-box {
-    border: #177139 solid 1px;
-    border-radius: 12px;
-    padding: 24px;
-    max-width: 540px;
-    margin: 0 auto;
-  }
-
-  &__tel-img {
-    max-width: 220px;
-    margin: 24px auto 0;
-    display: block;
-  }
-
-  &__hyo-wrap {
-    margin: 0 0 24px;
-
-    @include tab {
-      overflow-x: scroll;
-    }
-  }
-
-  &__hyo {
-
-    @include tab {
-      width: 760px;
-    }
-  }
-
-  &__section-table {
-    max-width: 500px;
-    margin: 0 auto 40px;
-
-    @include tab {
-      margin: 0 auto 24px;
-    }
-
-    table {
-      width: 100%;
-    }
-
-    table,
-    td,
-    th {
-      border: 1px solid #177139;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    td,
-    th {
-      padding: 4px 10px;
-      width: 50%;
-
-      @include sp {
-        padding: 4px 6px;
-      }
-    }
-
-    th {
-      background-color: #f2fbf7;
-    }
-  }
-
-  &__btn {
-    text-align: center;
-    margin: 80px 0 -40px;
-
-    @include tab {
-      margin: 60px 0 -40px;
-
-    }
-  }
-}
-
-
-.guide-top {
-
-  background-color: #f2fbf7;
-  padding: 24px 12px;
-
-  @include tab {
-    padding: 12px 12px;
-  }
-
-  &__inner {
-    max-width: 540px;
-    margin: 0 auto;
-    display: flex;
-    gap: 32px;
-    line-height: 1.3;
-    justify-content: center;
-
-    @include sp {
-      gap: 12px;
-      max-width: 280px;
-      flex-wrap: wrap;
-
-    }
-
-    @include tab {
-      gap: 12px;
-    }
-  }
-
-  &__item {
-
-    width: calc((100% - 128px) / 5);
-
-
-    @include sp {
-      width: calc((100% - 24px) / 3);
-
-    }
-
-    &.active {
-      position: relative;
-
-      &::before {
-        content: '';
-        width: 60px;
-        height: 4px;
-        display: inline-block;
-        background-color: #177139;
-        position: absolute;
-        bottom: 2px;
-        left: calc(50% - 30px);
-      }
-    }
-  }
-
-  &__ttl {
-    text-align: center;
-    white-space: nowrap;
-
-    @include sp {
-      font-size: 12px;
-    }
-  }
-
-  &__img {
-    margin: 0 0 16px;
-
-    @include sp {
-      margin: 0 0 8px;
-
-    }
-  }
-
-  &__batsu {
-    position: absolute;
-    top: 0;
-    right: 12px;
-    font-size: 18px;
-  }
-
-}
-
-/* =================================
-お問い合わせ
- ================================= */
-
-.page-contact {
-  padding: 0 12px;
-
-
-
-  &__section {
-    max-width: 920px;
-    margin: 40px auto 80px;
-
-    @include sp {
-      margin: 0 auto 40px;
-    }
-  }
-
-  &__text {
-    margin: 0 0 24px;
-  }
-
-  &__table {
-    width: 100%;
-    font-size: 15px;
-    margin: 0 auto 40px;
-
-
-    @include tab {
-      width: 100%;
-      margin: 0 auto 40px;
-    }
-
-    tr {
-      border-bottom: #177139 dotted 1px;
-
-      &:first-of-type {
-        border-top: #177139 dotted 1px;
-      }
-    }
-
-
-    th {
-      text-align: left;
-      vertical-align: middle;
-      padding: 8px 20px 8px 28px;
-      font-weight: 500;
-      width: 240px;
-
-      @include tab {
-        padding: 12px 0 4px 2px;
-        display: block;
-        width: 200px;
-        width: 100%;
-      }
-
-      @include sp {
-        font-size: 13px;
-      }
-    }
-
-    td {
-      text-align: left;
-      vertical-align: middle;
-      padding: 8px 20px 8px 28px;
-
-      @include tab {
-        display: block;
-        padding: 8px;
-      }
-
-
-      @include sp {
-        font-size: 13px;
-      }
-    }
-
-    input[type="text"],
-    textarea {
-      width: 100%;
-      padding: 8px;
-      font-size: 20px;
-      border: #848484 1px solid;
-      font-size: 16px;
-    }
-
-    input[type="radio"] {
-      width: 14px;
-      height: 14px;
-      border-radius: 15px;
-      border: #848484 1px solid;
-      margin: 0 4px 4px;
-    }
-
-    label {
-      display: inline-block;
-    }
-  }
-
-  &__table-span {
-    color: #fff;
-    background-color: #d40000;
-    padding: 0 4px;
-    font-size: 11px;
-    border-radius: 4px;
-    margin-left: auto;
-    display: inline-block;
-    float: right;
-
-    @include tab {
-      margin: 0 12px 0;
-      font-size: 10px;
-
-    }
-  }
-
-  button {
-    display: block;
-    text-align: center;
-    width: 120px;
-    margin: 0 auto;
-    background-color: #177139;
-    color: #f2f2f2;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-
-  &__input-s {
-    input[type="text"] {
-      width: 50%;
-
-    }
-  }
-}
-
-/* =================================
-みずほ屋について
- ================================= */
-
-.page-about {
-
-  &__section01 {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 0 12px 120px;
-
-    @include tab {
-      padding: 0 12px 40px;
-    }
-  }
-
-  &__section01-top-img01 {
-    margin: 0 0 40px;
-
-    @include tab {
-      margin: 0 0 16px;
-    }
-  }
-
-  &__section01-top-img02 {
-    width: 80%;
-    margin: 0 auto 40px;
-
-    @include tab {
-      width: 95%;
-    }
   }
 
-  &__section01-ttl {
-    color: #a27a51;
-    border-bottom: #2cb573 1px solid;
-    font-size: 26px;
-    font-weight: normal;
-    padding: 60px 0 8px;
-    position: relative;
-    margin: 0 0 24px;
+  &__ {}
 
-    &::before {
-      content: url(../img/subpage/about-section01-ttl.png);
-      position: absolute;
-      top: -44px;
-      left: -82px;
-      transform: scale(0.4);
-    }
+  &__ {}
 
-    @include tab {
-      font-size: 18px;
-      padding: 30px 0 8px;
-      line-height: 1.3;
-      margin: 0 0 12px;
+  &__ {}
 
-      &::before {
-        top: -61px;
-        left: -99px;
-        transform: scale(0.2);
-      }
-    }
-  }
+  &__ {}
 
-  &__section01-text-wrap {
-    max-width: 740px;
-    margin: 0 auto 40px;
+  &__ {}
 
-    @include tab {
-      margin: 0 auto 40px;
-    }
-  }
+  &__ {}
 
-  &__section01-text {
-    margin: 0 0 24px;
+  &__ {}
 
-    @include tab {
-      margin: 0 0 16px;
-    }
-  }
+  &__ {}
 
-  &__section02 {
-    background-color: #f2fbf7;
-    padding: 120px 12px;
+  &__ {}
 
-    @include tab {
-      padding: 40px 12px;
-    }
-  }
+  &__ {}
 
-  &__section02-inner {
-    max-width: 980px;
-    margin: 0 auto;
-  }
+  &__ {}
 
-  &__section02-ttl {
-    font-size: 32px;
-    margin: 0 0 40px;
-    color: #808080;
+  &__ {}
 
-    @include tab {
-      font-size: 20px;
-      margin: 0 0 24px;
-    }
-  }
+  &__ {}
 
-  &__section02-box {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
+  &__ {}
 
-    @include sp {
-      gap: 12px;
-    }
-  }
+  &__ {}
 
-  &__section02-item {
-    width: calc((100% - 40px) / 2);
 
-    @include sp {
-      width: 100%;
-    }
-  }
 }
 
 /* =================================
@@ -1203,543 +157,129 @@
 
 .page-company {
 
-  &__section01 {
-    background-image: linear-gradient(0deg, #f2fbf7, #ffffff);
-    padding: 40px 12px 80px;
-
-    @include tab {
-      padding: 0 12px 40px;
-    }
-  }
-
-  &__section01-inner {
-    background-color: #fff;
+  &__inner {
     max-width: 880px;
     margin: 0 auto;
-    padding: 40px;
-    border-radius: 32px;
-
-    @include tab {
-      padding: 12px;
-    }
   }
 
-  &__section01-lead {
-    font-size: 28px;
-    text-align: center;
-    color: #177139;
-    margin: 0 0 40px;
+  &__ttl {
+    color: $sub;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.4;
 
-    @include tab {
+    @include sp {
       font-size: 18px;
-      white-space: nowrap;
-      margin: 0 0 12px;
+      text-align: center;
     }
-  }
-
-  &__section01-box {
-    display: flex;
-    gap: 40px;
-
-    @include tab {
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-    }
-  }
-
-  &__section01-left {
-    width: 34%;
-
-    @include tab {
-      width: 100%;
-      max-width: 280px;
-    }
-  }
-
-  &__section01-right {
-    flex: 1;
-  }
-
-  &__section01-text {
-    margin: 0 0 24px;
-
-    &--right {
-      text-align: right;
-    }
-  }
-
-  &__sub-ttl {
-    margin: 60px auto 0px;
-
-    @include tab {
-      margin: 24px auto 0px;
-    }
-
-    &--section03 {
-      margin: 0 auto 60px;
-
-      @include tab {
-        margin: 0 auto 16px;
-      }
-    }
-  }
-
-  &__section03 {
-    background-color: #f2fbf7;
-    padding: 80px 12px 40px;
-
-    @include tab {
-      padding: 40px 12px 8px;
-
-    }
-  }
-
-  &__section03-item {
-    max-width: 980px;
-    margin: 0 auto 60px;
-    display: flex;
-    gap: 60px;
-    align-items: center;
-
-    @include tab {
-      gap: 32px;
-    }
-
-    @include sp {
-      flex-direction: column;
-      align-items: flex-start;
-      max-width: 480px;
-      margin: 0 auto 0;
-      gap: 16px;
-    }
-  }
-
-  &__section03-left {
-    width: 500px;
-
-    iframe {
-      border-radius: 20px;
-    }
-
-    @include tab {
-      width: 380px;
-
-      iframe {
-        border-radius: 12px;
-      }
-    }
-
-    @include tab {
-      width: 100%;
-    }
-  }
-
-  &__section03-right {
-    flex: 1;
-  }
-
-  &__section03-name {
-    background-color: #fff;
-    display: inline-block;
-    padding: 0 20px;
-    color: #177139;
-    border: #177139 1px solid;
-    margin: 0 0 32px;
-
-    @include sp {
-      margin: 0 0 12px 12px;
-    }
-  }
-
-  &__section03-text {
-
-    @include sp {
-      margin: 0 0 40px 12px;
-    }
-  }
-}
-
-/* =================================
-おいしさのひみつ
- ================================= */
-
-.page-secret {
-
-  &__section01-inner {
-    padding: 0 16px;
-  }
-
-  &__section01-top {
-    background-color: #f2fbf7;
-    border-top: #fff 32px solid;
-    border-bottom: #fff 32px solid;
-    margin: 24px 0 60px;
-
-    @include tab {
-      margin: 0 0 20px;
-    }
-  }
-
-  &__section01-top-img {
-    max-width: 600px;
-    margin: 0 auto;
-    transform: scale(1.2);
-
-    @include tab {
-      max-width: 400px;
-    }
-
-    @include sp {
-      max-width: 240px;
-    }
-  }
-
-  &__subttl {
-    max-width: 600px;
-    color: #0e884d;
-    border-bottom: #a27a51 1px solid;
-    font-size: 32px;
-    font-weight: normal;
-    padding: 60px 0 8px;
-    position: relative;
-    margin: 0 auto 24px;
-
-    &::before {
-      content: url(../img/subpage/about-section01-ttl.png);
-      position: absolute;
-      top: -48px;
-      left: -84px;
-      transform: scale(0.35);
-    }
-
-    @include tab {
-      font-size: 18px;
-      padding: 30px 0 8px;
-      line-height: 1.3;
-      margin: 0 0 12px;
-
-      &::before {
-        top: -61px;
-        left: -99px;
-        transform: scale(0.2);
-      }
-    }
-
-    &--border-none {
-      border-bottom: none;
-      margin: 0 auto 0;
-
-    }
-
-    &--s {
-      font-size: 23px;
-
-      @include tab {
-        font-size: 18px;
-      }
-
-      &::before {
-        @include tab {
-          top: -66px;
-        }
-      }
-    }
-  }
-
-  &__text {
-    max-width: 560px;
-    margin: 0 auto;
 
     span {
-      color: #f15924;
-    }
+      display: block;
+      color: #141414;
+      font-size: 17px;
 
-    &--00 {
-      margin: 0 auto 40px;
-
-      @include tab {
-        margin: 0 auto 40px;
-      }
-    }
-
-    &--01 {
-      margin: 0 auto 40px;
-
-      @include tab {
-        margin: 0 auto 12px;
-      }
-    }
-
-    &--02 {
-      margin: 0 auto 80px;
-
-      @include tab {
-        margin: 0 auto 40px;
+      @include sp {
+        font-size: 12px;
       }
     }
   }
 
-  &__section01-img01 {
-    margin: 0 0 60px;
-  }
+  &__table {
 
-  &__section01-img02 {
-    max-width: 640px;
-    margin: 0 auto 40px;
+    width: 100%;
+    margin: 24px auto 80px;
+    border-collapse: collapse;
 
     @include tab {
-      margin: 0 auto 12px;
-    }
-  }
-
-  &__lead {
-    font-size: 20px;
-    color: #a27a51;
-    max-width: 560px;
-    margin: 0 auto 12px;
-  }
-
-  &__section01-box {
-    max-width: 600px;
-    margin: 0 auto 80px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-
-    @include tab {
-      gap: 16px;
-      margin: 0 auto 60px;
-    }
-  }
-
-  &__section01-item {
-    width: calc((100% - 40px) / 2);
-
-    @include tab {
-      width: calc((100% - 16px) / 2);
-    }
-  }
-
-  &__section01-item-ttl {
-    font-size: 16px;
-    color: #a27a51;
-    margin: 0 0 8px;
-    font-weight: bold;
-  }
-
-  &__section01-item-img {
-    margin: 0 0 8px;
-  }
-
-  &__section01-item-text {}
-
-  &__list {
-    max-width: 600px;
-    margin: 0 auto 40px;
-    padding: 0 0 0 40px;
-
-    @include tab {
-      margin: 0 auto 12px;
-    }
-  }
-
-  &__list-item {
-    list-style: disc;
-    color: #a27a51;
-    font-weight: bold;
-  }
-
-  &__section01-img03 {
-    max-width: 780px;
-    margin: 0 auto;
-  }
-
-  &__btn {
-    text-align: center;
-    margin: 40px 0 80px;
-
-    @include tab {
-      margin: 24px 0 40px;
-    }
-  }
-
-  &__section02 {
-    background-color: #f2fbf7;
-    padding: 80px 0;
-
-    @include tab {
-      padding: 40px 0;
-    }
-  }
-
-  &__section02-img {
-    max-width: 760px;
-    margin: 0 auto 48px;
-    display: block;
-    padding: 0 16px;
-
-    @include tab {
-      margin: 0 auto 24px;
+      margin: 24px auto 40px;
     }
 
     &--bottom {
-      margin: 0 auto;
-    }
-  }
-
-  // 追加分
-
-  &__top-lead {
-    color: #a27a51;
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    margin: 0 0 40px;
-
-    @include tab {
-      font-size: 22px;
-      margin: 0 0 20px;
-
-    }
-  }
-
-  &__dl-list {
-    max-width: 560px;
-    margin: 0 auto 60px;
-
-    @include tab {
-      margin: 0 auto 40px;
-    }
-
-    dt {
-      color: #a27a51;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 0 0 4px;
+      margin: 24px auto 0;
 
       @include tab {
-        font-size: 16px;
+        margin: 24px auto 0;
       }
     }
 
-    dd {
-      margin: 0 0 16px;
 
-      span {
-        color: #f15924;
+
+    tr {
+      border-bottom: #c5c5c5 1px solid;
+
+      &:nth-child(odd) {
+        background-color: #f9f9f9;
+      }
+
+      &:first-of-type {
+        border-top: #c5c5c5 1px solid;
+
       }
     }
-  }
 
-  &__img-wrap {
-    display: flex;
-    margin: 0 0 80px;
 
-    @include tab {
-      margin: 0 0 40px;
-      flex-wrap: wrap;
+    th,
+    td {
+      padding: 20px;
+      vertical-align: top;
+      vertical-align: middle;
+
+      @include tab {
+        padding: 14px 10px;
+      }
     }
 
-    img {
+    th {
       width: 25%;
+      text-align: left;
+      padding-left: 40px;
+      font-weight: normal;
 
       @include tab {
-        width: 50%;
+        padding-left: 16px;
       }
     }
-  }
-}
 
-/* =================================
-白米の炊き方・玄米の炊き方
- ================================= */
 
-.page-hakumai {
-
-  &__section01 {
-    padding: 0 16px;
-  }
-
-  &__section01-top-img {
-    max-width: 700px;
-    margin: 40px auto;
-
-    @include tab {
-      margin: 24px auto;
-    }
-  }
-
-  &__text-wrap {
-    max-width: 600px;
-    margin: 0 auto 60px;
-
-    @include tab {
-      margin: 0 auto 40px;
-    }
-
-    &--margin {
-      margin: 0 auto;
-
-      @include tab {
-        margin: 0 auto;
-      }
-    }
-  }
-
-  &__text {
-    margin: 0 0 16px;
-
-    &:last-of-type {
+    .business-list,
+    .license-list {
       margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    span {
-      background: linear-gradient(transparent 60%, #cbf4e2 60%);
+    .business-list li,
+    .license-list li {
+      margin-bottom: 12px;
 
-      &.page-hakumai__span-purple {
-        background: none;
-        color: #93278f;
-        font-weight: bold;
+      &:last-of-type {
+        margin-bottom: 0;
       }
     }
 
-    &--bg {
-      background-color: #f1f1f1;
-      padding: 12px;
-      border-radius: 6px;
-      margin: 40px 0 0 !important;
-
-      @include tab {
-        padding: 8px;
-        margin: 24px 0 0 !important;
-      }
+    .label {
+      color: $main;
+      margin-right: 5px;
     }
+
   }
 
-  &__subttl {
-    max-width: 680px;
-    border-bottom: #a27a51 1px solid;
-    font-size: 24px;
-    margin: 0 auto 24px;
-    padding: 0 0 4px;
+  &__map-wrap {
+    max-width: 480px;
+    margin: 40px auto 80px;
 
     @include tab {
-      font-size: 20px;
+      margin: 40px auto 40px;
     }
   }
 
-  &__youtube-wrap {
-    max-width: 680px;
-    margin: 0 auto 24px;
-  }
-
-  &__youtube {
-    width: 100%;
+  &__map {
     height: 0;
     position: relative;
-    padding-top: 56.25%;
+    padding-top: 75.25%;
     overflow: hidden;
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
 
     iframe {
       position: absolute;
@@ -1750,246 +290,197 @@
     }
   }
 
-  &__section02 {
-    background-color: #f2fbf7;
-    padding: 40px 16px;
-    margin: 0 0 24px;
+  &__ {}
 
-    @include tab {
-      padding: 32px 16px;
-    }
-  }
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+
 }
 
-
 /* =================================
-定期購入について
+お問い合わせ
  ================================= */
 
-.page-subscription {
-  margin: 80px 0 24px;
+.page-contact {
 
-  @include tab {
-    margin: 0;
-    margin: 53px 0 0;
-  }
-
-  &__section {
-
-    &--bg {
-      background-color: #fff8ee;
-    }
-  }
-
-  &__section-inner {
-    max-width: 920px;
+  &__form-wrap {
+    max-width: 600px;
     margin: 0 auto;
-    padding: 80px 0;
 
-    @include tab {
-      padding: 40px 0;
-    }
-  }
-
-  &__section-ttl-wrap {
-    display: flex;
-    max-width: 920px;
-    margin: 0 auto 40px;
-    align-items: center;
-    gap: 18px;
-    padding: 0 12px;
-
-    @include tab {
-      gap: 8px;
+    label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
     }
 
-    &--section05 {
-      align-items: flex-start;
+    label span {
+      display: inline-block;
+      background: $sub;
+      color: #fff;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-right: 6px;
     }
-  }
 
-  &__section-ttl-img {
-    width: 100px;
-
-    @include tab {
-      width: 50px;
-    }
-  }
-
-  &__section-ttl {
-    font-size: 30px;
-    border-bottom: #fab153 1px solid;
-    flex: 1;
-    padding: 0 0 12px;
-
-    @include tab {
-      font-size: 22px;
-      padding: 0 0 3px;
-    }
-  }
-
-  &__section-ttl-bottom {
-    color: #fab153;
-    font-size: 24px;
-    padding: 12px 0;
-    border-bottom: #fab153 1px solid;
-    font-weight: bold;
-
-    @include sp {
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
       font-size: 16px;
-      padding: 12px 0 0;
-      border-bottom: none;
-    }
-  }
-
-  &__section-ttl-text-wrap {
-    flex: 1;
-  }
-
-  &__inner {
-    margin: 0 0 0 117px;
-    padding: 0 12px 0 0;
-
-    @include tab {
-      margin: 0;
-      padding: 0 12px;
+      box-sizing: border-box;
+      margin-bottom: 16px;
     }
 
-    &--bg {
-      margin: 0 16px 32px 77px;
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+
+    a {
+      color: $sub;
+      text-decoration: underline;
+    }
+
+    /* チェックボックス用の label はインライン表示に戻す */
+    input[type="checkbox"]+label {
+      display: inline;
+      font-weight: normal;
+      margin-left: 4px;
+    }
+
+    button {
+      display: block;
+      border: $main 3px solid;
       background-color: #fff;
-      padding: 40px;
+      padding: 12px;
       border-radius: 24px;
+      width: 200px;
+      text-align: center;
+      margin: 60px auto 0;
+    }
 
-      @include tab {
-        margin: 0 16px 24px;
-        padding: 12px;
-        border-radius: 8px;
+    .checkbox-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 24px 0;
+      justify-content: center;
+
+      label {
+        margin: 0;
       }
     }
-  }
 
-  &__section-sub-ttl {
-    color: #ff9933;
-    border: #ff9933 1px solid;
-    padding: 0 12px;
-    display: inline-block;
-    font-size: 18px;
-    margin: 0 0 16px;
+    .checkbox-text {
+      margin: 24px 0 0;
+      text-align: center;
+      line-height: 2;
 
-    @include sp {
-      font-size: 16px;
     }
   }
 
-  &__section-text-wrap {
-    margin: 0 0 40px;
+  &__ {}
 
-    &--margin {
-      margin: 0;
-    }
-  }
+  &__ {}
 
-  &__section-text {
-    margin: 0 0 16px;
+  &__ {}
 
-    &:last-of-type {
-      margin: 0;
-    }
+  &__ {}
 
-    span {
-      color: #f15a24;
-    }
-  }
+  &__ {}
 
-  &__btn {
-    text-align: center;
-  }
+  &__ {}
 
-  &__section01-box {
-    max-width: 720px;
-    margin: 0 auto 60px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
+  &__ {}
 
-    @include tab {
-      gap: 16px;
-      margin: 0 auto 40px;
-    }
-  }
+  &__ {}
 
-  &__section01-item {
-    background-color: #fff8ee;
-    width: calc((100% - 32px) / 2);
-    border: #ff9933 1px solid;
-    border-radius: 12px;
+  &__ {}
 
-    @include tab {
-      width: 100%;
-      max-width: 320px;
-    }
-  }
+  &__ {}
 
-  &__section01-top-wrap {
-    padding: 12px 16px;
-    background-color: #fff;
-    border-radius: 12px 12px 0 0;
-  }
+  &__ {}
 
-  &__section01-img {
-    width: 50px;
-    margin: 0 0 12px;
-  }
+  &__ {}
 
-  &__section01-ttl {
-    font-size: 18px;
-  }
+  &__ {}
 
-  &__section01-bottom-wrap {
-    padding: 12px 16px;
-  }
+  &__ {}
 
-  &__section04-box {
-    border: #0e884d 1px solid;
-    border-radius: 12px;
-    max-width: 600px;
-    margin: 40px auto 0;
-    padding: 24px;
+  &__ {}
 
-    @include sp {
-      padding: 12px;
-      border-radius: 8px;
-      margin: 24px auto 0;
-    }
-  }
+  &__ {}
 
-  &__section04-text {
-    margin: 40px 0;
 
-    @include sp {
-      margin: 24px 0;
-    }
-  }
+}
 
-  &__section04-tel {
-    width: 200px;
-    display: inline-block;
-    margin: 0 40px 0;
+/* =================================
 
-    @include sp {
-      display: block;
-      margin: 0 0 8px;
-    }
-  }
+ ================================= */
 
-  &__list {
-    padding: 0 16px 0 20px;
-  }
+.aaa {
 
-  &__list-item {
-    list-style: disc;
-    margin: 0 0 12px;
-  }
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+
 }
